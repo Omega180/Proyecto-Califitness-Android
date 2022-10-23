@@ -17,49 +17,31 @@
         app:layout_constraintTop_toTopOf="@+id/guideline36"
         app:srcCompat="@drawable/chrome_l7txkwxczf" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="280dp"
+    <CheckBox
+        android:id="@+id/cb_btn_sesion_iniciada"
+        android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="108dp"
         android:text="¿Desea mantener su sesion iniciada?"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline39"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/guideline38"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/guideline38"
-        app:srcCompat="@drawable/ic_baseline_check_circle_24"
-        tools:layout_editor_absoluteY="333dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="280dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="56dp"
-        android:text="¿Desea recibir correos con las ultimas actualizaciones disponibles?"
+    <CheckBox
+        android:id="@+id/cb_btn_novedades"
+        android:layout_width="300dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="80dp"
+        android:text="¿Desea recibir correos con las útlimas novedades de CaliFitness?"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline39"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/guideline38"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/guideline38"
-        app:srcCompat="@drawable/ic_baseline_check_circle_24"
-        tools:layout_editor_absoluteY="459dp" />
+        app:layout_constraintTop_toBottomOf="@+id/cb_btn_sesion_iniciada" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline36"
@@ -90,7 +72,7 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_guardar_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

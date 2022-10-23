@@ -7,6 +7,61 @@
     android:background="#E7622E"
     tools:context=".Recuperar_clave">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="329dp"
+        android:layout_height="171dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chrome_l7txkwxczf" />
+
+    <TextView
+        android:id="@+id/tv_recuperacion_correo"
+        android:layout_width="321dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/lato"
+        android:text="Ingrese el correo donde sera enviado el link de recuperacion"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/til_recuperar_correo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_recuperar_correo"
+        android:layout_width="300dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="124dp"
+        app:endIconDrawable="@drawable/ic_baseline_highlight_off_24"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_recuperar_ingresar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#FF9800"
+        android:text="Ingresar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
         android:layout_width="wrap_content"
@@ -35,58 +90,4 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="329dp"
-        android:layout_height="171dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chrome_l7txkwxczf" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_recuperar_correo"
-        android:layout_width="300dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="124dp"
-        app:endIconDrawable="@drawable/ic_baseline_highlight_off_24"
-        app:endIconMode="custom"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:startIconDrawable="@drawable/ic_baseline_email_24">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/tv_recuperacion_correo"
-        android:layout_width="321dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/lato"
-        android:text="Ingrese el correo donde sera enviado el link de recuperacion"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/til_recuperar_correo"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline13" />
-
-    <Button
-        android:id="@+id/btn_recuperar_ingresar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#FF9800"
-        android:text="Ingresar"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/guideline13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
