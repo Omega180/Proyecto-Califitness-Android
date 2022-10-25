@@ -21,7 +21,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_main_correo"
         android:layout_width="304dp"
-        android:layout_height="63dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.52"
@@ -32,27 +32,32 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_main_pass"
         android:layout_width="304dp"
-        android:layout_height="63dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:hint="Contraseña"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/til_main_correo"
-        app:passwordToggleEnabled="false"
+        app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:password="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

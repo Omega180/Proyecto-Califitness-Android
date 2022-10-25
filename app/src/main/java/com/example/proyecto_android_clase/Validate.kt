@@ -20,4 +20,9 @@ class Validate {
     fun validateFormCorreo(correo:String):Boolean{
         return Patterns.EMAIL_ADDRESS.matcher(correo).matches()
     }
+
+    //Funcion para validar si los campos son iguales
+    fun validatePasswords(clave:String, claveRepetida:String):Boolean{
+        return clave.trim().equals(claveRepetida)
+    }
 }

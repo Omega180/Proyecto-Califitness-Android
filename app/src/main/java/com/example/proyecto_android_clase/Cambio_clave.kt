@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.android.material.textfield.TextInputLayout
 
 class Cambio_clave : AppCompatActivity() {
 
@@ -13,8 +14,41 @@ class Cambio_clave : AppCompatActivity() {
         setContentView(R.layout.activity_cambio_clave)
         val btn_cambio_ingresar = findViewById<Button>(R.id.btn_cambio_ingresar)
         btn_cambio_ingresar.setOnClickListener {
-            val intent = Intent(this@Cambio_clave, pantalla_principal::class.java)
-            startActivity(intent)
+            if(validarContrasenaNueva()==0) {
+                val intent = Intent(this@Cambio_clave, pantalla_principal::class.java)
+                startActivity(intent)
+            }
         }
+    }
+
+    fun validarContrasenaNueva():Int {
+        var contador:Int = 0
+        val til_cambio_clave = findViewById<TextInputLayout>(R.id.til_cambio_clave)
+        val til_cambio_repetir = findViewById<TextInputLayout>(R.id.til_cambio_repetir)
+
+        var clave = til_cambio_clave.editText?.text.toString()
+        var repetir = til_cambio_repetir.editText?.text.toString()
+        val validar = Validate()
+        if(validar.validarCampoNulo(clave)) {
+            til_cambio_clave.error = getString(R.string.error_campo_vacio)
+            contador++
+        } else {
+            til_cambio_clave.error = ""
+        }
+        if(validar.validarCampoNulo(repetir)) {
+            til_cambio_repetir.error = getString(R.string.error_campo_vacio)
+            contador++
+        } else {
+            til_cambio_repetir.error = ""
+        }
+        if(contador == 0) {
+            if(!validar.validatePasswords(clave, repetir)) {
+                til_cambio_clave.error = getString(R.string.error_claves_coinciden)
+                contador++
+            } else {
+                til_cambio_clave.error = ""
+            }
+        }
+        return contador
     }
 }

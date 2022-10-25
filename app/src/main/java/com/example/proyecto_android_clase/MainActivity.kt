@@ -31,10 +31,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_main_IS.setOnClickListener {
-            var user = til_main_correo.editText?.text.toString()
-            var password = til_main_pass.editText?.text.toString()
             if(validarCampos()==0) {
-                Toast.makeText(this@MainActivity, "Bienvenido "+ user, Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@MainActivity, pantalla_principal::class.java)
                 startActivity(intent)
             } else {
@@ -44,33 +41,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun validarCampos():Int {
-        var contador:Int = 0
+        var contadorFinal:Int = 0
+        var contadorUsuario:Int = 0
+        var contadorClave:Int = 0
         val til_main_correo = findViewById<TextInputLayout>(R.id.til_main_correo)
         val til_main_pass = findViewById<TextInputLayout>(R.id.til_main_pass)
-        val prueba = "1"
         var user = til_main_correo.editText?.text.toString()
         var password = til_main_pass.editText?.text.toString()
 
         val validar = Validate()
         if(validar.validarCampoNulo(user)) {
-            til_main_correo.error = "No puede dejar el campo en nulo"
-            contador++
+            til_main_correo.error = "No puede dejar el campo vacio!"
+            contadorUsuario++
         }
         else {
             til_main_correo.error = ""
         }
         if(validar.validarCampoNulo(password)) {
-            til_main_pass.error = "No puede dejar el campo en nulo"
-            contador++
+            til_main_pass.error = "No puede dejar el campo vacio!"
+            contadorClave++
         } else {
             til_main_pass.error = ""
         }
-        if(validar.validateFormCorreo(user)) {
-            til_main_correo.error = "El Correo no posee el formato correcto"
-            contador++
-        } else {
-            til_main_correo.error = ""
+        if(contadorUsuario == 0) {
+            if(!validar.validateFormCorreo(user)) {
+                til_main_correo.error = "El Correo no posee el formato correcto"
+                contadorUsuario++
+            } else {
+                til_main_correo.error = ""
+            }
         }
-        return contador
+        contadorFinal = contadorClave + contadorUsuario
+
+        return contadorFinal
     }
 }

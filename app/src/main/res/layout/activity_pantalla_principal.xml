@@ -11,9 +11,11 @@
         android:id="@+id/imageView5"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/chrome_l7txkwxczf"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chrome_l7txkwxczf" />
 
     <TextView
         android:id="@+id/tv_menu_principal"
@@ -32,7 +34,7 @@
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="326dp"
-        android:layout_height="298dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:background="#FBFBFB"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
@@ -43,11 +45,10 @@
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline23"
         app:srcCompat="@drawable/frame_1" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -84,5 +85,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
+
+    <Button
+        android:id="@+id/btn_pantalla_home"
+        android:layout_width="135dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:alpha="0.0"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline23" />
+
+    <Button
+        android:id="@+id/btn_pantalla_settings"
+        android:layout_width="135dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:alpha="0.0"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
+        app:layout_constraintTop_toTopOf="@+id/guideline23" />
+
+    <Button
+        android:id="@+id/btn_pantalla_profile"
+        android:layout_width="140dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:text="Button"
+        android:alpha="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_pantalla_settings"
+        app:layout_constraintTop_toTopOf="@+id/guideline23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
