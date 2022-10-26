@@ -23,8 +23,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_nombre_perfil"
-        android:layout_width="300dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.482"
@@ -34,15 +34,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:maxLines="1"
-            android:hint="Nombre Completo" />
+            android:hint="Nombre Completo"
+            android:inputType="text"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_correo_perfil"
         android:layout_width="300dp"
-        android:layout_height="54dp"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.482"
@@ -52,14 +53,15 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:maxLines="1"
-            android:hint="Correo" />
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_max_calorias_diarias_perfil"
+        android:id="@+id/til_max_cal_perfil"
         android:layout_width="300dp"
-        android:layout_height="54dp"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.482"
@@ -69,8 +71,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:maxLines="1"
-            android:hint="Calorias maximas diarias" />
+            android:hint="Calorias maximas diarias"
+            android:inputType="text|number"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -85,7 +88,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toBottomOf="@+id/til_max_calorias_diarias_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/til_max_cal_perfil"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
