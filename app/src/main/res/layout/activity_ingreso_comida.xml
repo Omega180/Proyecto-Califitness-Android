@@ -18,10 +18,10 @@
         app:srcCompat="@drawable/chrome_l7txkwxczf" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="300dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="132dp"
+        android:id="@+id/til_ingreso_comida"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
@@ -30,32 +30,34 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:hint="Comida" />
+            android:hint="Comida"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
+        android:id="@+id/til_ingreso_cal"
         android:layout_width="300dp"
-        android:layout_height="54dp"
+        android:layout_height="0dp"
         android:layout_marginTop="44dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/til_ingreso_comida">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:hint="Calorias" />
+            android:hint="Calorias"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_ingreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#FF9800"
-        android:text="Imagen"
+        android:text="Guardar"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="@+id/guideline30" />

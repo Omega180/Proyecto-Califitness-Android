@@ -12,6 +12,7 @@ class pantalla_principal : AppCompatActivity() {
 
         val btn_pantalla_profile = findViewById<Button>(R.id.btn_pantalla_profile)
         val btn_pantalla_settings = findViewById<Button>(R.id.btn_pantalla_settings)
+        val btn_pantalla_home = findViewById<Button>(R.id.btn_pantalla_home)
         btn_pantalla_profile.setOnClickListener {
             val intent = Intent(this@pantalla_principal, perfil::class.java)
             startActivity(intent)
@@ -19,6 +20,11 @@ class pantalla_principal : AppCompatActivity() {
 
         btn_pantalla_settings.setOnClickListener {
             val intent = Intent(this@pantalla_principal, configuracion_nuevo::class.java)
+            startActivity(intent)
+        }
+
+        btn_pantalla_home.setOnClickListener {
+            val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)
             startActivity(intent)
         }
     }

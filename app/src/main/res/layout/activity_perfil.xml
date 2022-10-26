@@ -34,6 +34,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="50dp"
+            android:maxLines="1"
             android:hint="Nombre Completo" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,6 +52,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:maxLines="1"
             android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,6 +69,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:maxLines="1"
             android:hint="Calorias maximas diarias" />
     </com.google.android.material.textfield.TextInputLayout>
 
