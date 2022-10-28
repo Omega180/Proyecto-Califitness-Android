@@ -44,10 +44,15 @@ class perfil : AppCompatActivity() {
         if(validarPerfil.validarCampoNulo(nombre_perfil)) {
             til_nombre_perfil.error = "No puede dejar el campo vacio!"
             contNombrePerfil++
+        } else {
+            til_nombre_perfil.error = ""
         }
         if(validarPerfil.validarCampoNulo(correo_perfil)) {
             til_correo_perfil.error = "No puede dejar el campo vacio!"
             contCorreoPerfil++
+        }
+        else {
+            til_nombre_perfil.error = ""
         }
         if(validarPerfil.validarCampoNulo(max_cal_perfil)) {
             til_max_cal_perfil.error = "No puede dejar el campo vacio!"
