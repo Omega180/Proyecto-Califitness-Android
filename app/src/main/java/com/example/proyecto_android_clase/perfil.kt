@@ -44,7 +44,8 @@ class perfil : AppCompatActivity() {
         if(validarPerfil.validarCampoNulo(nombre_perfil)) {
             til_nombre_perfil.error = "No puede dejar el campo vacio!"
             contNombrePerfil++
-        } else {
+        }
+        else {
             til_nombre_perfil.error = ""
         }
         if(validarPerfil.validarCampoNulo(correo_perfil)) {
@@ -52,13 +53,13 @@ class perfil : AppCompatActivity() {
             contCorreoPerfil++
         }
         else {
-            til_nombre_perfil.error = ""
+            til_correo_perfil.error = ""
         }
         if(validarPerfil.validarCampoNulo(max_cal_perfil)) {
             til_max_cal_perfil.error = "No puede dejar el campo vacio!"
             contMaxCalPerfil++
         }else {
-            til_correo_perfil.error = ""
+            til_max_cal_perfil.error = ""
         }
 
         if(contCorreoPerfil == 0) {
