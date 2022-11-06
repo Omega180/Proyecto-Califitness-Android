@@ -3,4 +3,18 @@
     <string name="error_campo_vacio">El campo no puede estar vacio!</string>
     <string name="error_correo_incorrecto">El correo posee el formato incorrecto!</string>
     <string name="error_claves_coinciden">Las contraseñas no coinciden!</string>
+    <string-array name="arregloComidas">
+        <item>Pan con Queso y Jamon</item>
+        <item>Pasta a la Bolognesa</item>
+        <item>Hamburgesa de Pollo</item>
+        <item>Huevos revueltos</item>
+        <item>Sopa de Mariscos</item>
+    </string-array>
+    <string-array name="arregloCalorias">
+        <item>350</item>
+        <item>700</item>
+        <item>300</item>
+        <item>320</item>
+        <item>1000</item>
+    </string-array>
 </resources>

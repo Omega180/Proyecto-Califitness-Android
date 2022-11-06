@@ -32,12 +32,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
     <CalendarView
-        android:id="@+id/calendarView"
+        android:id="@+id/calendarioPrincipal"
         android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="24dp"
         android:background="#FBFBFB"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
         app:layout_constraintTop_toBottomOf="@+id/tv_menu_principal" />
 
@@ -121,5 +122,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btn_pantalla_settings"
         app:layout_constraintTop_toTopOf="@+id/guideline23" />
+
+    <Button
+        android:id="@+id/btn_pantalla_listaComidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF9800"
+        android:text="Lista de comidas favoritas"
+        app:layout_constraintBottom_toTopOf="@+id/guideline23"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/guideline21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
