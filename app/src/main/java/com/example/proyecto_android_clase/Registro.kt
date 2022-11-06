@@ -1,11 +1,13 @@
 package com.example.proyecto_android_clase
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
+import java.util.*
 
 class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,8 +15,19 @@ class Registro : AppCompatActivity() {
         setContentView(R.layout.activity_registro)
         val til_registro_name = findViewById<TextInputLayout>(R.id.til_registro_name)
         val til_registro_email = findViewById<TextInputLayout>(R.id.til_registro_email)
+        val til_registro_fecha_nac = findViewById<TextInputLayout>(R.id.til_registro_fecha_nac)
         val til_registro_pass = findViewById<TextInputLayout>(R.id.til_registro_pass)
         val btn_ingresar = findViewById<Button>(R.id.btn_registro_ingresar)
+
+        val cal = Calendar.getInstance()
+
+        //DATEPICKER
+        val listenerFecha = DatePickerDialog.OnDateSetListener { datePicker, anyo, mes, dia ->
+            til_registro_fecha_nac.editText?.setText("$dia/$mes/$anyo")
+        }
+        til_registro_fecha_nac.editText?.setOnClickListener {
+            DatePickerDialog(this,listenerFecha,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
 
         btn_ingresar.setOnClickListener {
             if(validarCampos()==0) {
