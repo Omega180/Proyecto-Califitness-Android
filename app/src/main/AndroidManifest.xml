@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Proyecto_android_clase"
         tools:targetApi="31">
         <activity
+            android:name=".explicacion_comida"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".lista_comidas"
             android:exported="false">
             <meta-data
