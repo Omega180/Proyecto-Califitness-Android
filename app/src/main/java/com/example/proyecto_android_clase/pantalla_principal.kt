@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
-import android.widget.Toast
 
 class pantalla_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +38,8 @@ class pantalla_principal : AppCompatActivity() {
 
         val calendarioPrincipal = findViewById<View>(R.id.calendarioPrincipal) as CalendarView
         calendarioPrincipal.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            Toast.makeText(applicationContext, "${year}/${month}/${dayOfMonth}", Toast.LENGTH_LONG).show()
             val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)
-            intent.putExtra("fecha_seleccionada", "${year}, ${month}, ${dayOfMonth}")
+            intent.putExtra("fecha_seleccionada", "${dayOfMonth}/${month}/${year}")
             startActivity(intent)
         }
     }

@@ -5,33 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7622E"
-    tools:context=".Crud"
+    tools:context=".crud_nuevo"
     >
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="200dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline41"
-        app:layout_constraintEnd_toStartOf="@+id/guideline43"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/guideline42"
-        app:layout_constraintTop_toTopOf="@+id/guideline40"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/chrome_l7txkwxczf" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="321dp"
         android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="136dp"
         android:background="#D9D9D9"
         android:text="DESAYUNO"
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline43"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline42"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/img_btn_agregar_desayuno"
@@ -190,7 +179,9 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline41"
-        app:layout_constraintStart_toStartOf="@+id/guideline42">
+        app:layout_constraintStart_toStartOf="@+id/guideline42"
+        app:layout_constraintTop_toBottomOf="@+id/img_btn_editar_extra"
+        app:layout_constraintVertical_bias="0.759">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="158dp"
@@ -205,7 +196,9 @@
         android:layout_height="54dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline41"
-        app:layout_constraintEnd_toStartOf="@+id/guideline43">
+        app:layout_constraintEnd_toStartOf="@+id/guideline43"
+        app:layout_constraintTop_toBottomOf="@+id/img_btn_editar_extra"
+        app:layout_constraintVertical_bias="0.759">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="158dp"
@@ -241,4 +234,40 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="320dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:background="#FF9800"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintStart_toStartOf="@+id/guideline42"
+        app:layout_constraintTop_toTopOf="@+id/guideline40" />
+
+    <TextView
+        android:id="@+id/tv_crud_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Fecha:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline43"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="@+id/guideline42"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_crud_fechaNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="lorem"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline43"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toEndOf="@+id/tv_crud_fecha"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
