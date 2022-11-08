@@ -54,6 +54,6 @@
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline47"
         app:layout_constraintEnd_toStartOf="@+id/guideline45"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/guideline44" />
 </androidx.constraintlayout.widget.ConstraintLayout>

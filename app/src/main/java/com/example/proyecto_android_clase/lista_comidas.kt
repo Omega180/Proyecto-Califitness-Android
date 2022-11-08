@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 
 class lista_comidas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +26,7 @@ class lista_comidas : AppCompatActivity() {
         lv_comidas.adapter = arrayAdapter
         lv_comidas.onItemClickListener = object : AdapterView.OnItemClickListener{
             override fun onItemClick(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Toast.makeText(this@lista_comidas, "Seleccionaste ${comidas[position]}, el cual posee" +
-                        "unas calorias de ${comidasCalorias[position]}", Toast.LENGTH_SHORT).show()
+
                 val intent = Intent(this@lista_comidas, explicacion_comida::class.java)
                 intent.putExtra("Selected_item_name", comidas[position])
                 intent.putExtra("Selected_item_calories", comidasCalorias[position])
