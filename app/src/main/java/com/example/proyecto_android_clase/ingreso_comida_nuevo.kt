@@ -18,7 +18,7 @@ class ingreso_comida_nuevo : AppCompatActivity() {
         val til_ingreso_cal = findViewById<TextInputLayout>(R.id.til_ingreso_cal)
         val btn_ingreso = findViewById<Button>(R.id.btn_ingreso)
         val sp_comidas_fav = findViewById<Spinner>(R.id.sp_comidas_fav)
-        val lv_comidas_fav = findViewById<ListView>(R.id.lv_comidas_fav)
+
 
         //GENERACION SPINNER
         val arrayAdapterSpinner: ArrayAdapter<*>
