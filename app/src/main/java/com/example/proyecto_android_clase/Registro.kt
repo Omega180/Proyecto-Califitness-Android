@@ -4,15 +4,25 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
+import com.example.proyecto_android_clase.roomDatabase.DBRoom
+import com.example.proyecto_android_clase.roomDatabase.entity.Usuario
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.launch
 import java.util.*
 
 class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
+        //Inicializacion de DB
+        val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
+            .allowMainThreadQueries()
+            .build()
         val til_registro_name = findViewById<TextInputLayout>(R.id.til_registro_name)
         val til_registro_email = findViewById<TextInputLayout>(R.id.til_registro_email)
         val til_registro_fecha_nac = findViewById<TextInputLayout>(R.id.til_registro_fecha_nac)
@@ -30,13 +40,29 @@ class Registro : AppCompatActivity() {
         }
 
         btn_ingresar.setOnClickListener {
-            if(validarCampos()==0) {
-                val intent = Intent(this@Registro, pantalla_principal::class.java)
-                startActivity(intent)
-            } else {
+            var user = til_registro_name.editText?.text.toString()
+            var password = til_registro_pass.editText?.text.toString()
+            var email = til_registro_email.editText?.text.toString()
+            var fecha = listenerFecha.javaClass?.toString()
+            //Insertar Info
+            val usuario = Usuario(email, user, password, "10/10/2022")
+            lifecycleScope.launch {
+                val id = room.daoUsuario().agregarUsuario(usuario)
+                if(id>0){
+                    Log.d("Iduser", id.toString())
+                    Toast.makeText(this@Registro, "Usuario Registrado exitosamente", Toast.LENGTH_SHORT).show()
+                    if(validarCampos()==0) {
+                        val intent = Intent(this@Registro, pantalla_principal::class.java)
+                        startActivity(intent)
+                    } else {
 
+                    }
+                }
+                var respuesta = room.daoUsuario().obtenerUsuarios()
+                for (elemento in respuesta) {
+                    println(elemento.toString())
+                }
             }
-
         }
     }
 

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' //dependencia
 }
 
 android {
@@ -33,6 +34,16 @@ android {
 }
 
 dependencies {
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    //para usar anotaciones
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // to use kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+    //Corrutinas: Funciones que podemos suspender y continuar luego, similar a las funciones async await
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    implementation "androidx.room:room-ktx:$room_version"
+
     def lottieVersion = "3.6.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'androidx.core:core-ktx:1.7.0'
