@@ -12,8 +12,6 @@ interface DaoUsuario {
     //el suspend son las corrutionas
     //arreglo de Usuarios
     suspend fun obtenerUsuarios():List<Usuario>
-
-
     @Query("SELECT * From Usuario Where Usuario=:usuario")
     suspend fun obtenerUsuario(usuario: String): List<Usuario>
 

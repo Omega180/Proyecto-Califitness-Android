@@ -7,19 +7,32 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Spinner
+import androidx.room.Room
+import com.example.proyecto_android_clase.roomDatabase.DBRoom
+import com.example.proyecto_android_clase.roomDatabase.entity.RegistroComida
 import com.google.android.material.textfield.TextInputLayout
 
 class ingreso_comida_nuevo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingreso_comida)
-
+        val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
+            .allowMainThreadQueries()
+            .build()
+        val extras = intent.extras
+        val idTipoComida = extras?.getString("tipoComida", "0")
+        val fecha = extras?.getString("fecha", "No hay fecha")
         val til_ingreso_comida = findViewById<TextInputLayout>(R.id.til_ingreso_comida)
         val til_ingreso_cal = findViewById<TextInputLayout>(R.id.til_ingreso_cal)
         val btn_ingreso = findViewById<Button>(R.id.btn_ingreso)
         val sp_comidas_fav = findViewById<Spinner>(R.id.sp_comidas_fav)
-
-
+        // val comida = RegistroComida() <- Crear dentro de una variable un objetivo de tipo RegistroComida (La clase creada en entity)
+        // y pasarle los datos que solicita el objeto, osea el nombre, cant de calorias, fecha que viene de la pantalla anterior
+        //si es favorito o no, tipo de comida que viene del intent y el id (Que es el Correo)del usuario
+        // que debe venir desde el login con extra
+        // Despues de eso, tienes que correr el lifecycle dentro del setOnClickListener
+        // (ver archivo de registro para mas info) y correr la funcion de agregarComida
+        // Ejemplo: val registroComida = RegistroComida("Pollo", "400", "20/10/2022", true, 1, "2") pero usando variables en vez de datos fijos
         //GENERACION SPINNER
         val arrayAdapterSpinner: ArrayAdapter<*>
         var comidas_fav = ArrayList<String>()

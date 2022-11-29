@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.proyecto_android_clase.roomDatabase.DBRoom
+import com.example.proyecto_android_clase.roomDatabase.entity.RegistroComida
 import com.example.proyecto_android_clase.roomDatabase.entity.Usuario
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.launch
@@ -43,9 +44,9 @@ class Registro : AppCompatActivity() {
             var user = til_registro_name.editText?.text.toString()
             var password = til_registro_pass.editText?.text.toString()
             var email = til_registro_email.editText?.text.toString()
-            var fecha = listenerFecha.javaClass?.toString()
+            var fecha = til_registro_fecha_nac.editText?.text.toString()
             //Insertar Info
-            val usuario = Usuario(email, user, password, "10/10/2022")
+            val usuario = Usuario(email, user, password, fecha)
             lifecycleScope.launch {
                 val id = room.daoUsuario().agregarUsuario(usuario)
                 if(id>0){

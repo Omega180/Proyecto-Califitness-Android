@@ -6,12 +6,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
+import androidx.room.Room
+import com.example.proyecto_android_clase.roomDatabase.DBRoom
 
 class pantalla_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_principal)
-
+        val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
+            .allowMainThreadQueries()
+            .build()
         val btn_pantalla_profile = findViewById<Button>(R.id.btn_pantalla_profile)
         val btn_pantalla_settings = findViewById<Button>(R.id.btn_pantalla_settings)
         val btn_pantalla_home = findViewById<Button>(R.id.btn_pantalla_home)

@@ -30,12 +30,16 @@ class RegistroComida {
         nombre_comida: String?,
         cant_calorias: String?,
         fecha: String?,
-        favoritos_SiNo: Boolean?
+        favoritos_SiNo: Boolean?,
+        FK_tipo_comida: Int,
+        FK_Usuario: String
     ) {
         this.nombre_comida = nombre_comida
         this.cant_calorias = cant_calorias
         this.fecha = fecha
         this.favoritos_SiNo = favoritos_SiNo
+        this.FK_tipo_comida = FK_tipo_comida
+        this.FK_Usuario = FK_Usuario
     }
 
 
