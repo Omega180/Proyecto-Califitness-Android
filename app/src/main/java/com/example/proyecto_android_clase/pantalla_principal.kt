@@ -40,9 +40,11 @@ class pantalla_principal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val user: String = intent.getStringExtra("user").toString()
         val calendarioPrincipal = findViewById<View>(R.id.calendarioPrincipal) as CalendarView
         calendarioPrincipal.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)
+            intent.putExtra("user", user)
             intent.putExtra("fecha_seleccionada", "${dayOfMonth}/${month}/${year}")
             startActivity(intent)
         }

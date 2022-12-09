@@ -2,19 +2,8 @@ package com.example.proyecto_android_clase.roomDatabase.entity
 
 
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-@Entity(foreignKeys = arrayOf(
-    ForeignKey(entity = TipoComida::class,
-        parentColumns = arrayOf("id_tipo_comida"),
-        childColumns = arrayOf("FK_tipo_comida"),
-        onDelete = ForeignKey.CASCADE),
-    ForeignKey(entity = Usuario::class,
-        parentColumns = arrayOf("usuario"),
-        childColumns = arrayOf("FK_Usuario"),
-        onDelete = ForeignKey.CASCADE
-    )
-) )
+@Entity
 class RegistroComida {
 
         @PrimaryKey(autoGenerate = true)
@@ -23,7 +12,7 @@ class RegistroComida {
         var cant_calorias: String? = null
         var fecha: String? = null
         var favoritos_SiNo: Boolean? = false
-        var FK_tipo_comida: Int = 0
+        var FK_tipo_comida: String? = null
         var FK_Usuario: String? = null
 
     constructor(
@@ -31,7 +20,7 @@ class RegistroComida {
         cant_calorias: String?,
         fecha: String?,
         favoritos_SiNo: Boolean?,
-        FK_tipo_comida: Int,
+        FK_tipo_comida: String,
         FK_Usuario: String
     ) {
         this.nombre_comida = nombre_comida

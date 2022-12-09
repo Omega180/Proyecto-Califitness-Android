@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
+            // en caso de recibir error de migracion o version de base de datos
+            // agregar aca .fallbackToDestructiveMigration(), correr la aplicacion para que se borre la base de datos
+                //cerrar la app, borrar la linea de codigo, y volver a registrarse
             .allowMainThreadQueries()
             .build()
         //Val es igual a Const en js
@@ -45,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                     if (response.size == 1) {
                         Toast.makeText(this@MainActivity, "Login Exitoso", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@MainActivity, pantalla_principal::class.java)
+                        intent.putExtra("user",user)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this@MainActivity, "Login fallido, ingrese los datos correctos", Toast.LENGTH_SHORT).show()
