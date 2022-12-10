@@ -1,9 +1,17 @@
 package com.example.proyecto_android_clase
 
+import android.app.Activity
+import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
+import android.widget.ImageView
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.textfield.TextInputLayout
 
 class perfil : AppCompatActivity() {
@@ -15,6 +23,11 @@ class perfil : AppCompatActivity() {
         val til_correo_perfil = findViewById<TextInputLayout>(R.id.til_correo_perfil)
         val til_max_cal_perfil = findViewById<TextInputLayout>(R.id.til_max_cal_perfil)
         val btn_guardar_perfil = findViewById<Button>(R.id.btn_guardar_perfil)
+        val btn_perfil_photo = findViewById<Button>(R.id.btn_perfil_photo)
+        btn_perfil_photo.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            asignarFoto.launch(intent)
+        }
 
         btn_guardar_perfil.setOnClickListener {
             if(validarPerfil()==0) {
@@ -27,7 +40,18 @@ class perfil : AppCompatActivity() {
         }
 
     }
+    private val asignarFoto = registerForActivityResult(
 
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        result : ActivityResult ->
+        if(result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            val imageBitmap = intent?.extras?.get("data") as Bitmap
+            val imageView = findViewById<ImageView>(R.id.imv_perfil)
+            imageView.setImageBitmap(imageBitmap)
+        }
+    }
     fun validarPerfil():Int {
         var contNombrePerfil:Int = 0
         var contCorreoPerfil:Int = 0

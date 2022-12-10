@@ -20,5 +20,6 @@
         <item>320</item>
         <item>1000</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

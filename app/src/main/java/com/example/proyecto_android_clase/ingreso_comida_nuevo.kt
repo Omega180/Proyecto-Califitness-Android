@@ -15,13 +15,13 @@ class ingreso_comida_nuevo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingreso_comida)
-        val user: String = intent.getStringExtra("user").toString()
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
             .allowMainThreadQueries()
             .build()
         //val extras = intent.extras
         //val idTipoComida = extras?.getString("tipoComida", "0")
         val extras = intent.extras
+        val user: String = intent.getStringExtra("user").toString()
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
         //val fecha = extras?.getString("fecha", "No hay fecha")
         val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"

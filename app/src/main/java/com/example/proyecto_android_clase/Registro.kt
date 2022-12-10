@@ -34,7 +34,8 @@ class Registro : AppCompatActivity() {
 
         //DATEPICKER
         val listenerFecha = DatePickerDialog.OnDateSetListener { datePicker, anyo, mes, dia ->
-            til_registro_fecha_nac.editText?.setText("$dia/$mes/$anyo")
+            val mesArreglado = mes + 1
+            til_registro_fecha_nac.editText?.setText("$dia/$mesArreglado/$anyo")
         }
         til_registro_fecha_nac.editText?.setOnClickListener {
             DatePickerDialog(this,listenerFecha,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()

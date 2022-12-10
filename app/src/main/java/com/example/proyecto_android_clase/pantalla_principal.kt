@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
+import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.proyecto_android_clase.roomDatabase.DBRoom
+import kotlinx.coroutines.launch
 
 class pantalla_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +23,7 @@ class pantalla_principal : AppCompatActivity() {
         val btn_pantalla_settings = findViewById<Button>(R.id.btn_pantalla_settings)
         val btn_pantalla_home = findViewById<Button>(R.id.btn_pantalla_home)
         val btn_pantalla_listaComidas = findViewById<Button>(R.id.btn_pantalla_listaComidas)
+        val user: String = intent.getStringExtra("user").toString()
         btn_pantalla_profile.setOnClickListener {
             val intent = Intent(this@pantalla_principal, perfil::class.java)
             startActivity(intent)
@@ -30,17 +34,20 @@ class pantalla_principal : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_pantalla_home.setOnClickListener {
-            val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)
-            startActivity(intent)
-        }
-
         btn_pantalla_listaComidas.setOnClickListener {
-            val intent = Intent(this@pantalla_principal, lista_comidas::class.java)
-            startActivity(intent)
+            lifecycleScope.launch {
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                val intent = Intent(this@pantalla_principal, lista_comidas::class.java)
+                intent.putExtra("user", user)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                startActivity(intent)
+            }
+
         }
 
-        val user: String = intent.getStringExtra("user").toString()
+
         val calendarioPrincipal = findViewById<View>(R.id.calendarioPrincipal) as CalendarView
         calendarioPrincipal.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)

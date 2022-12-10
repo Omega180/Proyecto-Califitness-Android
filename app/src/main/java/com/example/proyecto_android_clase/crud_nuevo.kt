@@ -18,10 +18,11 @@ class crud_nuevo : AppCompatActivity() {
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
             .allowMainThreadQueries()
             .build()
+        val tv_crud_fechaNumero = findViewById<TextView>(R.id.tv_crud_fechaNumero)
         val extras = intent.extras
         val FK_Usuario:String = intent.getStringExtra("FK_Usuario").toString()
         val nombre_comida:String = intent.getStringExtra("nombre_comida").toString()
-        val tv_crud_fechaNumero = findViewById<TextView>(R.id.tv_crud_fechaNumero)
+
         val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"
         val btn_agregar_desayuno = findViewById<Button>(R.id.btn_agregar_desayuno)
         val btn_agregar_almuerzo = findViewById<Button>(R.id.btn_agregar_almuerzo)
@@ -70,7 +71,6 @@ class crud_nuevo : AppCompatActivity() {
         }
 
         btn_editar_desayuno.setOnClickListener {
-
             val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
             intent.putExtra("user", user)
             intent.putExtra("tipoComida", "1")

@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt' //dependencia
+    id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'//dependencia
 
 }
 
@@ -33,9 +34,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     def room_version = "2.4.3"
     implementation "androidx.room:room-runtime:$room_version"
     //para usar anotaciones

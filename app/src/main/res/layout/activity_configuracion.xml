@@ -82,4 +82,16 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline39"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline38" />
+
+    <Button
+        android:id="@+id/btn_config_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#FF9800"
+        android:text="Ver nuestra oficina de contacto"
+        app:layout_constraintBottom_toTopOf="@+id/cb_btn_sesion_iniciada"
+        app:layout_constraintEnd_toStartOf="@+id/guideline39"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guideline38" />
 </androidx.constraintlayout.widget.ConstraintLayout>

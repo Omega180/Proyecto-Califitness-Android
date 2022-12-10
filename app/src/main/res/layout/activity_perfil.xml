@@ -9,7 +9,7 @@
     >
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imv_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6">
+        app:layout_constraintTop_toBottomOf="@+id/imv_perfil">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
@@ -118,5 +118,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+    <Button
+        android:id="@+id/btn_perfil_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FF9800"
+        android:text="Tomar Foto de Perfil"
+        app:layout_constraintEnd_toStartOf="@+id/guideline27"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guideline26"
+        app:layout_constraintTop_toBottomOf="@+id/imv_perfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
