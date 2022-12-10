@@ -37,7 +37,7 @@ class pantalla_principal : AppCompatActivity() {
         btn_pantalla_listaComidas.setOnClickListener {
             lifecycleScope.launch {
                 var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
-                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
                 val intent = Intent(this@pantalla_principal, lista_comidas::class.java)
                 intent.putExtra("user", user)
                 intent.putExtra("comidasNombres", obtenerComidasNombre)
@@ -51,8 +51,9 @@ class pantalla_principal : AppCompatActivity() {
         val calendarioPrincipal = findViewById<View>(R.id.calendarioPrincipal) as CalendarView
         calendarioPrincipal.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val intent = Intent(this@pantalla_principal, crud_nuevo::class.java)
+            val fecha = "${dayOfMonth}/${month}/${year}"
             intent.putExtra("user", user)
-            intent.putExtra("fecha_seleccionada", "${dayOfMonth}/${month}/${year}")
+            intent.putExtra("fecha_seleccionada", fecha)
             startActivity(intent)
         }
     }

@@ -4,7 +4,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.proyecto_android_clase.roomDatabase.entity.RegistroComida
-
 @Dao
 interface DaoRegistroComida {
 
@@ -14,11 +13,11 @@ interface DaoRegistroComida {
     @Query("SELECT * FROM RegistroComida WHERE FK_Usuario=:FK_Usuario")
     suspend fun obtenerComidasUsuario(FK_Usuario: String): List<RegistroComida>
 
-    @Query("SELECT 'nombre_comida' FROM RegistroComida WHERE FK_Usuario=:FK_Usuario AND favoritos_SiNo == 1")
+    @Query("SELECT nombre_comida FROM RegistroComida WHERE FK_Usuario=:FK_Usuario AND favoritos_SiNo=:favoritos_SiNo")
     suspend fun obtenerComidasFavoritasNombre(FK_Usuario: String, favoritos_SiNo: Boolean): Array<String>
 
-    @Query("SELECT 'cant_calorias' FROM RegistroComida WHERE FK_Usuario=:FK_Usuario AND favoritos_SiNo == 1")
-    suspend fun obtenerComidasFavoritasCalorias(FK_Usuario: String, favoritos_SiNo: Boolean): List<String>
+    @Query("SELECT cant_calorias FROM RegistroComida WHERE FK_Usuario=:FK_Usuario AND favoritos_SiNo=:favoritos_SiNo")
+    suspend fun obtenerComidasFavoritasCalorias(FK_Usuario: String, favoritos_SiNo: Boolean): Array<String>
 
     @Query("SELECT * FROM RegistroComida WHERE nombre_comida=:nombre_comida AND FK_Usuario=:FK_Usuario")
     suspend fun obtenerComidaporNombre(nombre_comida: String,FK_Usuario: String): List<RegistroComida>

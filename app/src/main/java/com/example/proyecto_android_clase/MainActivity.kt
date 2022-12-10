@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             // en caso de recibir error de migracion o version de base de datos
             // agregar aca .fallbackToDestructiveMigration(), correr la aplicacion para que se borre la base de datos
                 //cerrar la app, borrar la linea de codigo, y volver a registrarse
+            .fallbackToDestructiveMigration()
             .allowMainThreadQueries()
             .build()
         //Val es igual a Const en js

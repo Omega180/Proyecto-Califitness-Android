@@ -24,7 +24,7 @@ class ingreso_comida_nuevo : AppCompatActivity() {
         val user: String = intent.getStringExtra("user").toString()
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
         //val fecha = extras?.getString("fecha", "No hay fecha")
-        val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"
+        val fechaNumero: String = intent.getStringExtra("fecha").toString()
         val til_ingreso_comida = findViewById<TextInputLayout>(R.id.til_ingreso_comida)
         val til_ingreso_cal = findViewById<TextInputLayout>(R.id.til_ingreso_cal)
         val cb_comidas_fav = findViewById<CheckBox>(R.id.cb_comidas_fav)
@@ -59,6 +59,11 @@ class ingreso_comida_nuevo : AppCompatActivity() {
                 var respComida = room.daoRegistroComida().obtenerComidaCreada(user,fechaNumero, idTipoComida)
                 if(respComida.size>=1){
                     Toast.makeText(this@ingreso_comida_nuevo, "Ya existe un registro, utilice boton editar", Toast.LENGTH_SHORT).show()
+                    var respuesta = room.daoRegistroComida().obtenerRegistroComida()
+                    for(elemento in respuesta){
+                        println(elemento.toString())
+
+                    }
                 }else{
                 id = room.daoRegistroComida().agregarRegistroComida(registroComida)
                 //OPCIONAL

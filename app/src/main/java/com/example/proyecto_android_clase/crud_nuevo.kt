@@ -23,7 +23,7 @@ class crud_nuevo : AppCompatActivity() {
         val FK_Usuario:String = intent.getStringExtra("FK_Usuario").toString()
         val nombre_comida:String = intent.getStringExtra("nombre_comida").toString()
 
-        val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"
+        val fechaNumero: String = intent.getStringExtra("fecha_seleccionada").toString()
         val btn_agregar_desayuno = findViewById<Button>(R.id.btn_agregar_desayuno)
         val btn_agregar_almuerzo = findViewById<Button>(R.id.btn_agregar_almuerzo)
         val btn_agregar_cena = findViewById<Button>(R.id.btn_agregar_cena)
