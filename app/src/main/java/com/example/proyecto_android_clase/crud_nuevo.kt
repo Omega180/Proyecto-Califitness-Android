@@ -36,73 +36,122 @@ class crud_nuevo : AppCompatActivity() {
         tv_crud_fechaNumero.text = fechaNumero
 
         btn_agregar_desayuno.setOnClickListener {
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "1")
+                intent.putExtra("fecha", fechaNumero)
 
-            val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "1")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+                startActivity(intent)
+            }
+
         }
 
         btn_agregar_almuerzo.setOnClickListener {
-            val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "2")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "2")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
+
 
         }
 
         btn_agregar_cena.setOnClickListener {
-            val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "3")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "3")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
+
 
         }
 
         btn_agregar_extra.setOnClickListener {
-            val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "4")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, ingreso_comida_nuevo::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "4")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
+
         }
 
         btn_editar_desayuno.setOnClickListener {
-            val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "1")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "1")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
         }
 
         btn_editar_almuerzo.setOnClickListener {
-
-            val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "2")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "2")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
         }
 
         btn_editar_cena.setOnClickListener {
-
-            val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "3")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "3")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
         }
 
         btn_editar_extra.setOnClickListener {
-
-            val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-            intent.putExtra("user", user)
-            intent.putExtra("tipoComida", "4")
-            intent.putExtra("fecha", fechaNumero)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
+                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
+                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
+                intent.putExtra("comidasNombres", obtenerComidasNombre)
+                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
+                intent.putExtra("user", user)
+                intent.putExtra("tipoComida", "4")
+                intent.putExtra("fecha", fechaNumero)
+                startActivity(intent)
+            }
         }
 
 

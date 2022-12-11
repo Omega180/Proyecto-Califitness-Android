@@ -25,6 +25,7 @@ class DetalleRegistroComida : AppCompatActivity() {
         //INICIALIZAR DB
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db").allowMainThreadQueries().build()
         val user: String = intent.getStringExtra("user").toString()
+
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
         val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"
         lifecycleScope.launch{

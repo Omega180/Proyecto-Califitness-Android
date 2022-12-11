@@ -3,7 +3,9 @@ package com.example.proyecto_android_clase
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.proyecto_android_clase.roomDatabase.DBRoom
@@ -18,13 +20,11 @@ class ingreso_comida_nuevo : AppCompatActivity() {
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db")
             .allowMainThreadQueries()
             .build()
-        //val extras = intent.extras
-        //val idTipoComida = extras?.getString("tipoComida", "0")
-        val extras = intent.extras
         val user: String = intent.getStringExtra("user").toString()
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
-        //val fecha = extras?.getString("fecha", "No hay fecha")
         val fechaNumero: String = intent.getStringExtra("fecha").toString()
+        val arrayNombres: Array<String> = intent.getStringArrayExtra("comidasNombres") as Array<String>
+        val arrayCalorias: Array<String> = intent.getStringArrayExtra("comidasCalorias") as Array<String>
         val til_ingreso_comida = findViewById<TextInputLayout>(R.id.til_ingreso_comida)
         val til_ingreso_cal = findViewById<TextInputLayout>(R.id.til_ingreso_cal)
         val cb_comidas_fav = findViewById<CheckBox>(R.id.cb_comidas_fav)
@@ -33,19 +33,29 @@ class ingreso_comida_nuevo : AppCompatActivity() {
         //GENERACION SPINNER
         val arrayAdapterSpinner: ArrayAdapter<*>
         var comidas_fav = ArrayList<String>()
-        comidas_fav.add("Pan con Queso y Jamon")
-        comidas_fav.add("Pasta a la Bolognesa")
-        comidas_fav.add("Hamburgesa de Pollo")
-        comidas_fav.add("Huevos Revueltos")
-        comidas_fav.add("Sopa de Mariscos")
+
+        for(i in arrayNombres.indices) {
+            println(arrayNombres[i])
+            println(arrayCalorias[i])
+        }
 
         arrayAdapterSpinner = ArrayAdapter(
             this@ingreso_comida_nuevo,
             android.R.layout.simple_spinner_dropdown_item,
-            comidas_fav
+            arrayNombres
         )
         sp_comidas_fav.adapter = arrayAdapterSpinner
+        sp_comidas_fav.onItemSelectedListener = object: OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, View: View?, position: Int, id: Long) {
+                til_ingreso_comida.editText?.setText(arrayNombres[position])
+                til_ingreso_cal.editText?.setText(arrayCalorias[position])
+            }
 
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                Toast.makeText(this@ingreso_comida_nuevo, "No seleccionaste ninguna comida favorita", Toast.LENGTH_SHORT).show()
+            }
+
+        }
 
         btn_ingreso.setOnClickListener {
 
