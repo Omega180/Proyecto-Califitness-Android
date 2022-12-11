@@ -3,8 +3,8 @@ package com.example.proyecto_android_clase
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
+import android.view.View
+import android.widget.*
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.proyecto_android_clase.roomDatabase.DBRoom
@@ -25,19 +25,9 @@ class DetalleRegistroComida : AppCompatActivity() {
         //INICIALIZAR DB
         val room = Room.databaseBuilder(this, DBRoom::class.java, "db-ciisa.db").allowMainThreadQueries().build()
         val user: String = intent.getStringExtra("user").toString()
-
+        //Declaracion de extra intents
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
-        val fechaNumero = extras?.getString("fecha_seleccionada")?:"No se selecciono una fecha"
-        lifecycleScope.launch{
-            var respComida = room.daoRegistroComida().obtenerComidaCreada(user,fechaNumero, idTipoComida)
-            if(respComida.size>=1){
-                for(element in respComida){
-                    til_ingreso_comida.editText?.setText(element.nombre_comida.toString())
-                    til_ingreso_cal.editText?.setText(element.cant_calorias.toString())
-                    cb_comidas_fav.isChecked
-                }
-            }
-        }
+        val fechaNumero: String = intent.getStringExtra("fecha").toString()
 
         btn_editar_comida.setOnClickListener {
             lifecycleScope.launch {

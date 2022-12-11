@@ -101,10 +101,6 @@ class crud_nuevo : AppCompatActivity() {
         btn_editar_desayuno.setOnClickListener {
             lifecycleScope.launch {
                 val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
-                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
-                intent.putExtra("comidasNombres", obtenerComidasNombre)
-                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
                 intent.putExtra("user", user)
                 intent.putExtra("tipoComida", "1")
                 intent.putExtra("fecha", fechaNumero)
@@ -115,10 +111,6 @@ class crud_nuevo : AppCompatActivity() {
         btn_editar_almuerzo.setOnClickListener {
             lifecycleScope.launch {
                 val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
-                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
-                intent.putExtra("comidasNombres", obtenerComidasNombre)
-                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
                 intent.putExtra("user", user)
                 intent.putExtra("tipoComida", "2")
                 intent.putExtra("fecha", fechaNumero)
@@ -129,10 +121,6 @@ class crud_nuevo : AppCompatActivity() {
         btn_editar_cena.setOnClickListener {
             lifecycleScope.launch {
                 val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
-                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
-                intent.putExtra("comidasNombres", obtenerComidasNombre)
-                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
                 intent.putExtra("user", user)
                 intent.putExtra("tipoComida", "3")
                 intent.putExtra("fecha", fechaNumero)
@@ -143,10 +131,6 @@ class crud_nuevo : AppCompatActivity() {
         btn_editar_extra.setOnClickListener {
             lifecycleScope.launch {
                 val intent = Intent(this@crud_nuevo, DetalleRegistroComida::class.java)
-                var obtenerComidasNombre = room.daoRegistroComida().obtenerComidasFavoritasNombre(user, true)
-                var obtenerComidasCalorias = room.daoRegistroComida().obtenerComidasFavoritasCalorias(user, true)
-                intent.putExtra("comidasNombres", obtenerComidasNombre)
-                intent.putExtra("comidasCalorias", obtenerComidasCalorias)
                 intent.putExtra("user", user)
                 intent.putExtra("tipoComida", "4")
                 intent.putExtra("fecha", fechaNumero)

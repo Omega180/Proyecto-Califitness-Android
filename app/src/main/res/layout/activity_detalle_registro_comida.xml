@@ -17,35 +17,15 @@
         app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:srcCompat="@drawable/chrome_l7txkwxczf" />
 
-    <TextView
-        android:id="@+id/tv_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seleccione una de sus comidas favoritas"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <Spinner
-        android:id="@+id/sp_comidas_fav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toBottomOf="@+id/tv_spinner" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_ingreso_comida"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toBottomOf="@+id/sp_comidas_fav">
+        app:layout_constraintTop_toBottomOf="@+id/imageView7">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"

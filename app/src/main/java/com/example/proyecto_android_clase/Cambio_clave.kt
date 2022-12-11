@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 
 class Cambio_clave : AppCompatActivity() {
@@ -15,8 +16,8 @@ class Cambio_clave : AppCompatActivity() {
         val btn_cambio_ingresar = findViewById<Button>(R.id.btn_cambio_ingresar)
         btn_cambio_ingresar.setOnClickListener {
             if(validarContrasenaNueva()==0) {
-                val intent = Intent(this@Cambio_clave, pantalla_principal::class.java)
-                startActivity(intent)
+                Toast.makeText(this@Cambio_clave, "Feature work in progress", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
