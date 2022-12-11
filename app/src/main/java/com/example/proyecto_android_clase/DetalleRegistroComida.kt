@@ -28,7 +28,16 @@ class DetalleRegistroComida : AppCompatActivity() {
         //Declaracion de extra intents
         val idTipoComida: String = intent.getStringExtra("tipoComida").toString()
         val fechaNumero: String = intent.getStringExtra("fecha").toString()
-
+        lifecycleScope.launch{
+            var respComida = room.daoRegistroComida().obtenerComidaCreada(user,fechaNumero, idTipoComida)
+            if(respComida.size>=1){
+                for(element in respComida){
+                    til_ingreso_comida.editText?.setText(element.nombre_comida.toString())
+                    til_ingreso_cal.editText?.setText(element.cant_calorias.toString())
+                    cb_comidas_fav.isChecked
+                }
+            }
+        }
         btn_editar_comida.setOnClickListener {
             lifecycleScope.launch {
                 var comida = til_ingreso_comida.editText?.text.toString()
